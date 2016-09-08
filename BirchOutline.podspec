@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
   s.ios.source_files = 'Common/Sources/**/*.{h,m,swift}', 'BirchOutlineiOS/**/*.{h,m,swift}'
+  s.ios.resource_bundles = { 'BirchOutline' => 'Dependencies/*.js' }
 
   s.osx.deployment_target = '10.9'
   s.osx.source_files = 'Common/Sources/**/*.{h,m,swift}', 'BirchOutline/**/*.{h,m,swift}'

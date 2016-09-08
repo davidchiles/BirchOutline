@@ -45,8 +45,10 @@ public class BirchScriptContext {
         setExceptionHandler(context)
         setTimeoutAndClearTimeoutHandlers(context)
         
-        let bundle = NSBundle(forClass: BirchScriptContext.self)
-        let path = scriptPath ?? bundle.pathForResource("birchoutline", ofType: "js")
+        let podBundle = NSBundle(forClass: BirchScriptContext.self)
+        let bundleURL = podBundle.URLForResource("BirchOutline", withExtension: "bundle")
+        let bundle = NSBundle(URL: bundleURL!)
+        let path = scriptPath ?? bundle!.pathForResource("birchoutline", ofType: "js")
         let script = try! String(contentsOfFile: path!)
         let birchExportsName = path?.lastPathComponent.stringByDeletingPathExtension
         
